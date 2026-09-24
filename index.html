@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecurePass — Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="generator-card">
+      <div class="brand">
+        <div class="brand-icon">🔐</div>
+        <div>
+          <h1>SecurePass</h1>
+          <p>Generate a strong password in seconds</p>
+        </div>
+      </div>
+
+      <div class="password-box">
+        <span id="password">Click Generate</span>
+        <button class="copy-btn" id="copyBtn" title="Copy password" aria-label="Copy password">📋</button>
+      </div>
+      <div class="copy-message" id="copyMessage"></div>
+
+      <div class="strength-row">
+        <div>
+          <span class="muted">Password strength</span>
+          <strong id="strengthText">—</strong>
+        </div>
+        <div class="strength-bars" id="strengthBars">
+          <i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+
+      <div class="control">
+        <div class="control-title">
+          <label for="length">Password Length</label>
+          <output id="lengthValue">12</output>
+        </div>
+        <input id="length" type="range" min="6" max="32" value="12">
+        <div class="range-labels"><span>6</span><span>32</span></div>
+      </div>
+
+      <div class="options">
+        <label class="option">
+          <span><b>🔠</b><span><strong>Uppercase</strong><small>A-Z</small></span></span>
+          <input id="uppercase" type="checkbox" checked>
+          <em></em>
+        </label>
+
+        <label class="option">
+          <span><b>🔡</b><span><strong>Lowercase</strong><small>a-z</small></span></span>
+          <input id="lowercase" type="checkbox" checked>
+          <em></em>
+        </label>
+
+        <label class="option">
+          <span><b>🔢</b><span><strong>Numbers</strong><small>0-9</small></span></span>
+          <input id="numbers" type="checkbox" checked>
+          <em></em>
+        </label>
+
+        <label class="option">
+          <span><b>🔣</b><span><strong>Symbols</strong><small>!@#$%</small></span></span>
+          <input id="symbols" type="checkbox" checked>
+          <em></em>
+        </label>
+      </div>
+
+      <p class="error" id="error"></p>
+
+      <button class="generate-btn" id="generateBtn">↻ Generate Password</button>
+
+      <div class="tips">
+        <span>💡</span>
+        <p>For better security, use at least <strong>12 characters</strong> with a mix of letters, numbers and symbols.</p>
+      </div>
+
+      <footer>100% client-side • Your password is never sent anywhere</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
